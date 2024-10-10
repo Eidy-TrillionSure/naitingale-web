@@ -21,7 +21,6 @@
     h5,
     h6 {
       @apply font-bold;
-      @apply text-primary-blue-500;
     }
 
     h1 {
