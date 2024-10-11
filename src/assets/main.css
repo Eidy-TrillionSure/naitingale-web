@@ -12,7 +12,8 @@
 @layer base {
   :root {
     font-family: 'Noto Sans', 'Noto Sans Thai', sans-serif;
-    background-color: #fefbf9;
+
+    @apply bg-background;
 
     h1,
     h2,
