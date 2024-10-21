@@ -16,5 +16,5 @@ const navbarHeight = computed(() => navbar.value?.clientHeight + 'px')
   </header>
   <RouterView class="pb-4" :style="{ paddingTop: navbarHeight }" />
 
-  <PageFooter />
+  <PageFooter class="mt-8" />
 </template>

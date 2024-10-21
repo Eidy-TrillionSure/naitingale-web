@@ -32,7 +32,4 @@
       </p>
     </div>
   </section>
-  <div
-    class="w-screen self-center h-40 -mt-10 -mb-32 rotate-180 bg-[linear-gradient(180deg,_rgba(250,_252,_255,_0)_72.5%,_rgba(68,_155,_252,_0.8)_100%)]"
-  ></div>
 </template>
