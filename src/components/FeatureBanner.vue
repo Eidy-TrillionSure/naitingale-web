@@ -1,4 +1,7 @@
 <template>
+  <div
+    class="w-screen self-center h-40 -mb-10 -mt-32 bg-[linear-gradient(180deg,_rgba(250,_252,_255,_0)_72.5%,_rgba(68,_155,_252,_0.8)_100%)]"
+  ></div>
   <section
     class="w-screen self-center bg-[url('@/assets/banner-1.png')] bg-cover bg-center aspect-[3] flex flex-col justify-between text-background p-8"
   >

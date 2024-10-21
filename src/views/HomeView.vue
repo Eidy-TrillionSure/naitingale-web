@@ -7,7 +7,7 @@ import FeatureBanner from '@/components/FeatureBanner.vue'
 </script>
 
 <template>
-  <main class="container flex flex-col gap-y-4 justify-center">
+  <main class="container flex flex-col gap-y-10 justify-center">
     <HeroElement></HeroElement>
     <HowToUse id="howto"></HowToUse>
     <FeatureBanner></FeatureBanner>
