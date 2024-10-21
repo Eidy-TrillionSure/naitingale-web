@@ -5,6 +5,7 @@ import NavBar from './components/NavBar.vue'
 import PageFooter from './components/PageFooter.vue'
 
 const navbar = useTemplateRef<HTMLDivElement>('navbar')
+const navbarHeight = computed(() => navbar.value?.clientHeight + 'px')
 </script>
 
 <template>
@@ -13,8 +14,7 @@ const navbar = useTemplateRef<HTMLDivElement>('navbar')
       <NavBar />
     </div>
   </header>
-
-  <RouterView :style="{ paddingTop: navbar?.clientHeight + 'px' }" />
+  <RouterView class="pb-4" :style="{ paddingTop: navbarHeight }" />
 
   <PageFooter></PageFooter>
 </template>

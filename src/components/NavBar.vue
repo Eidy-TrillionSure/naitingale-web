@@ -12,9 +12,8 @@ const items: MenuItem[] = [
 </script>
 
 <template>
-  <!-- <nav class="fixed w-full top-4"> -->
   <Menubar
-    class="container py-4 rounded-full bg-opacity-60 shadow-lg backdrop-blur-md border border-white/20"
+    class="container py-4 rounded-full bg-opacity-60 shadฃow-lg backdrop-blur-md border border-white/20 z-[5000]"
     :model="items"
     :pt="{ rootList: { class: 'justify-end grow' } }"
   >
@@ -25,7 +24,6 @@ const items: MenuItem[] = [
     </template>
     <template #end>
       <div class="flex items-center gap-2">
-        <!-- <InputText placeholder="Search" type="text" class="w-32 sm:w-auto" /> -->
         <Button class="bg-gradient-to-r from-accent-light to-accent rounded-full">
           เริ่มตรวจสอบ
         </Button>
