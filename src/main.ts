@@ -12,12 +12,14 @@ import Aura from '@primevue/themes/aura'
 import PrimeVue from 'primevue/config'
 import App from './App.vue'
 import router from './router'
+import { definePreset } from '@primevue/themes'
 const app = createApp(App)
 
 app.use(createPinia())
 app.use(router)
 
 app.use(PrimeVue, {
+  ripple: true,
   theme: {
     preset: Aura,
     options: {
@@ -25,12 +27,12 @@ app.use(PrimeVue, {
         name: 'primevue',
         order: 'tailwind-base, primevue, tailwind-utilities'
       },
-      zIndex: {
-        modal: 1100, //dialog, drawer
-        overlay: 1000, //select, popover
-        menu: 1000, //overlay menus
-        tooltip: 1100 //tooltip
-      },
+      // zIndex: {
+      //   modal: 1100, //dialog, drawer
+      //   overlay: 1000, //select, popover
+      //   menu: 1000, //overlay menus
+      //   tooltip: 1100 //tooltip
+      // },
       darkModeSelector: '.dark'
     }
   }

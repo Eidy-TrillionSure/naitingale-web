@@ -10,11 +10,11 @@ const navbarHeight = computed(() => navbar.value?.clientHeight + 'px')
 
 <template>
   <header>
-    <div ref="navbar" class="fixed w-full py-4">
+    <div ref="navbar" class="fixed w-full py-4 z-[5000]">
       <NavBar />
     </div>
   </header>
   <RouterView class="pb-4" :style="{ paddingTop: navbarHeight }" />
 
-  <PageFooter></PageFooter>
+  <PageFooter />
 </template>

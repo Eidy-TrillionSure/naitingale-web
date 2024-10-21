@@ -13,9 +13,9 @@ const items: MenuItem[] = [
 
 <template>
   <Menubar
-    class="container py-4 rounded-full bg-opacity-60 shadฃow-lg backdrop-blur-md border border-white/20 z-[5000]"
+    class="container py-4 rounded-full bg-opacity-70 bg-background shadow-[0_0_30px_-10px_rgba(0,0,0,0.3)] backdrop-blur-md border border-white/20 font-bold"
     :model="items"
-    :pt="{ rootList: { class: 'justify-end grow' } }"
+    :pt="{ rootList: { class: 'justify-end grow gap-x-2' } }"
   >
     <template #start>
       <RouterLink to="/">
@@ -24,8 +24,8 @@ const items: MenuItem[] = [
     </template>
     <template #end>
       <div class="flex items-center gap-2">
-        <Button class="bg-gradient-to-r from-accent-light to-accent rounded-full">
-          เริ่มตรวจสอบ
+        <Button class="bg-gradient-to-r from-accent-light to-accent rounded-full border-0 ml-4">
+          เริ่มตรวจสอบอาการ
         </Button>
       </div>
     </template>
