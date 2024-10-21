@@ -5,9 +5,18 @@ import type { MenuItem } from 'primevue/menuitem'
 import { RouterLink } from 'vue-router'
 
 const items: MenuItem[] = [
-  { label: 'วิธีการใช้งาน', url: '#howto' },
-  { label: 'เกี่ยวกับเรา', url: '#about' },
-  { label: 'ติดต่อเรา', url: '#contact' }
+  {
+    label: 'วิธีการใช้งาน',
+    command: () => document.querySelector('#howto')?.scrollIntoView({ behavior: 'smooth' })
+  },
+  {
+    label: 'เกี่ยวกับเรา',
+    command: () => document.querySelector('#about')?.scrollIntoView({ behavior: 'smooth' })
+  },
+  {
+    label: 'ติดต่อเรา',
+    command: () => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })
+  }
 ]
 </script>
 

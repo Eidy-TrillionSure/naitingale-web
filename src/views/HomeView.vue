@@ -9,9 +9,9 @@ import FeatureBanner from '@/components/FeatureBanner.vue'
 <template>
   <main class="container flex flex-col gap-y-4 justify-center">
     <HeroElement></HeroElement>
-    <HowToUse></HowToUse>
+    <HowToUse id="howto"></HowToUse>
     <FeatureBanner></FeatureBanner>
-    <AboutUs></AboutUs>
-    <ContactUs></ContactUs>
+    <AboutUs id="about"></AboutUs>
+    <ContactUs id="contact"></ContactUs>
   </main>
 </template>
