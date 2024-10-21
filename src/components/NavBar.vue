@@ -5,9 +5,9 @@ import type { MenuItem } from 'primevue/menuitem'
 import { RouterLink } from 'vue-router'
 
 const items: MenuItem[] = [
-  { label: 'วิธีการใช้งาน' },
-  { label: 'เกี่ยวกับเรา' },
-  { label: 'ติดต่อเรา' }
+  { label: 'วิธีการใช้งาน', url: '#howto' },
+  { label: 'เกี่ยวกับเรา', url: '#about' },
+  { label: 'ติดต่อเรา', url: '#contact' }
 ]
 </script>
 
