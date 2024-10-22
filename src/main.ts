@@ -9,13 +9,19 @@ import { far } from '@fortawesome/free-regular-svg-icons'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import Aura from '@primevue/themes/aura'
+import { all } from '@vee-validate/rules'
 import PrimeVue from 'primevue/config'
+import { defineRule } from 'vee-validate'
 import App from './App.vue'
 import router from './router'
 const app = createApp(App)
 
 app.use(createPinia())
 app.use(router)
+
+Object.entries(all).forEach(([name, rule]) => {
+  defineRule(name, rule)
+})
 
 app.use(PrimeVue, {
   ripple: true,
