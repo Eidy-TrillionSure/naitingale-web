@@ -1,5 +1,5 @@
 <template>
-  <section class="text-center flex flex-col w-full justify-center gap-8">
+  <section class="container text-center flex flex-col w-full justify-center gap-8">
     <h1>วิธีใช้งาน</h1>
     <div class="flex flex-col md:flex-row md:justify-center gap-12">
       <div class="flex flex-col md:w-[30%] gap-y-8">

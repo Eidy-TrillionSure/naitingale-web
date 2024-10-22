@@ -3,7 +3,7 @@ import Button from 'primevue/button'
 </script>
 
 <template>
-  <section class="flex">
+  <section class="container flex">
     <div class="flex flex-col justify-center gap-y-6">
       <h1>
         Helping you <span class="text-accent">navigate your symptoms</span> to the most suitable

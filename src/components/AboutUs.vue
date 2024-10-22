@@ -1,5 +1,5 @@
 <template>
-  <section class="flex gap-x-8">
+  <section class="container flex gap-x-8">
     <img src="@/assets/about-us-1.svg" />
     <div class="flex flex-col gap-y-4">
       <h1>เกี่ยวกับเรา</h1>
