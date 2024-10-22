@@ -10,9 +10,9 @@
         &mdash; All rights reserved
       </div>
       <div class="text-2xl flex gap-x-4">
-        <font-awesome-icon :icon="['fab', 'line']" />
+        <!-- <font-awesome-icon :icon="['fab', 'line']" />
         <font-awesome-icon :icon="['fab', 'x-twitter']" />
-        <font-awesome-icon :icon="['fab', 'facebook']" />
+        <font-awesome-icon :icon="['fab', 'facebook']" /> -->
       </div>
     </div>
   </footer>
