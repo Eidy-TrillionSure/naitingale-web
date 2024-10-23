@@ -8,13 +8,14 @@ import * as yup from 'yup'
 import { toTypedSchema } from '@vee-validate/yup'
 import { useForm } from 'vee-validate'
 import { object } from 'yup'
+import InputMask from 'primevue/inputmask'
 
 const { defineField, handleSubmit, meta } = useForm({
   validationSchema: toTypedSchema(
     object({
       name: yup.string().required(),
       email: yup.string().required().email(),
-      telephone: yup.number(),
+      telephone: yup.number().required(),
       organization: yup.string().required(),
       message: yup.string().required()
     })
@@ -30,7 +31,7 @@ const [message, messageAttrs] = defineField('message')
 const onSubmit = handleSubmit((values) => {
   console.log(values)
   window.open(
-    `https://docs.google.com/forms/d/e/1FAIpQLSdUKPTrARstbUiashjFgtLg708uqbIBjw7_t0-0dmWFgBTOEw/viewform?usp=pp_url&entry.1496819275=${name.value || ''}&entry.214348020=${email.value || ''}&entry.2003020273=${telephone.value || ''}&entry.1743049687=${organization.value || ''}&entry.2030350315=${message.value || ''}`,
+    `https://docs.google.com/forms/d/e/1FAIpQLSdUKPTrARstbUiashjFgtLg708uqbIBjw7_t0-0dmWFgBTOEw/viewform?usp=pp_url&entry.1496819275=${encodeURIComponent((name.value || '').trim())}&entry.214348020=${encodeURIComponent((email.value || '').trim())}&entry.2003020273=${encodeURIComponent((telephone.value || '').toString().trim())}&entry.1743049687=${encodeURIComponent((organization.value || '').trim())}&entry.2030350315=${encodeURIComponent((message.value || '').trim())}`,
     '_blank'
   )
 })
@@ -55,7 +56,13 @@ const onSubmit = handleSubmit((values) => {
       <label for="email">อีเมล<span>*</span></label>
     </FloatLabel>
     <FloatLabel class="grow" variant="on">
-      <InputText v-model="telephone" v-bind="telephoneAttrs" class="w-full" id="tel" />
+      <InputMask
+        v-model="telephone"
+        v-bind="telephoneAttrs"
+        mask="999-999-9999"
+        class="w-full"
+        id="tel"
+      />
       <label for="tel">โทร</label>
     </FloatLabel>
     <FloatLabel class="grow" variant="on">
