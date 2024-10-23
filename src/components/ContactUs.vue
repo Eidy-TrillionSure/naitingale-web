@@ -95,7 +95,6 @@ const onSubmit = handleSubmit((values) => {
     </FloatLabel>
     <FloatLabel class="grow" variant="on">
       <Textarea
-        required
         v-model="message"
         v-bind="messageAttrs"
         :invalid="errors.message"
