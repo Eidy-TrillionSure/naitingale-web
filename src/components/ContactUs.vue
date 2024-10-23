@@ -8,16 +8,20 @@ import * as yup from 'yup'
 import { toTypedSchema } from '@vee-validate/yup'
 import { useForm } from 'vee-validate'
 import { object } from 'yup'
-import InputMask from 'primevue/inputmask'
 
-const { defineField, handleSubmit, meta } = useForm({
+const { defineField, handleSubmit, meta, errors } = useForm({
   validationSchema: toTypedSchema(
     object({
       name: yup.string().required(),
       email: yup.string().required().email(),
-      telephone: yup.number().required(),
+      telephone: yup
+        .string()
+        .matches(/^[0-9]+$/)
+        .min(6)
+        .max(16)
+        .required(),
       organization: yup.string().required(),
-      message: yup.string().required()
+      message: yup.string()
     })
   )
 })
@@ -40,8 +44,17 @@ const onSubmit = handleSubmit((values) => {
 <template>
   <form @submit="onSubmit" class="container flex flex-col gap-y-4 w-2/3 self-center">
     <h1 class="text-center">ติดต่อเพื่อใช้ผลิตภัณฑ์จาก Naitingale</h1>
+    {{ errors }}
     <FloatLabel class="grow" variant="on">
-      <InputText required v-model="name" v-bind="nameAttrs" class="w-full" id="name" type="text" />
+      <InputText
+        required
+        v-model="name"
+        v-bind="nameAttrs"
+        :invalid="errors.name"
+        class="w-full"
+        id="name"
+        type="text"
+      />
       <label for="name">ชื่อ<span>*</span></label>
     </FloatLabel>
     <FloatLabel class="grow" variant="on">
@@ -49,6 +62,7 @@ const onSubmit = handleSubmit((values) => {
         required
         v-model="email"
         v-bind="emailAttrs"
+        :invalid="errors.email"
         class="w-full"
         id="email"
         type="email"
@@ -56,20 +70,23 @@ const onSubmit = handleSubmit((values) => {
       <label for="email">อีเมล<span>*</span></label>
     </FloatLabel>
     <FloatLabel class="grow" variant="on">
-      <InputMask
+      <InputText
+        required
         v-model="telephone"
         v-bind="telephoneAttrs"
-        mask="999-999-9999"
-        class="w-full"
+        :invalid="errors.telephone"
+        class="w-full no-arrow"
         id="tel"
+        type="number"
       />
-      <label for="tel">โทร</label>
+      <label for="tel">โทร<span>*</span></label>
     </FloatLabel>
     <FloatLabel class="grow" variant="on">
       <InputText
         required
         v-model="organization"
         v-bind="organizationAttrs"
+        :invalid="errors.organization"
         class="w-full"
         id="organization"
         type="text"
@@ -81,11 +98,12 @@ const onSubmit = handleSubmit((values) => {
         required
         v-model="message"
         v-bind="messageAttrs"
+        :invalid="errors.message"
         class="w-full"
         id="message"
         rows="5"
       ></Textarea>
-      <label for="message">ข้อความ<span>*</span></label>
+      <label for="message">ข้อความ</label>
     </FloatLabel>
     <Button
       :disabled="!meta.valid"
