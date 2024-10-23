@@ -1,3 +1,7 @@
+<script setup lang="ts">
+import Button from 'primevue/button'
+</script>
+
 <template>
   <footer class="bg-gradient-to-r to-[#2c78ff] from-[#00c9ff] text-white">
     <div
@@ -10,9 +14,22 @@
         &mdash; All rights reserved
       </div>
       <div class="text-2xl flex gap-x-4">
-        <!-- <font-awesome-icon :icon="['fab', 'line']" />
-        <font-awesome-icon :icon="['fab', 'x-twitter']" />
-        <font-awesome-icon :icon="['fab', 'facebook']" /> -->
+        <Button
+          as="a"
+          href="https://line.me/R/ti/p/@780zbcmk?from=page&accountId=780zbcm"
+          target="_blank"
+          class="text-white bg-transparent hover:bg-background hover:text-accent border-0 p-1"
+        >
+          <font-awesome-icon size="xl" :icon="['fab', 'line']" />
+        </Button>
+        <Button
+          as="a"
+          href="https://line.me/R/ti/p/@780zbcmk?from=page&accountId=780zbcm"
+          target="_blank"
+          class="text-white bg-transparent hover:bg-background hover:text-accent border-0 p-1"
+        >
+          <font-awesome-icon size="xl" :icon="['fab', 'facebook']" />
+        </Button>
       </div>
     </div>
   </footer>
