@@ -43,7 +43,7 @@ const onSubmit = handleSubmit((values) => {
 
 <template>
   <form @submit="onSubmit" class="container flex flex-col gap-y-4 w-2/3 self-center">
-    <h1 class="text-center">ติดต่อเพื่อใช้ผลิตภัณฑ์จาก Naitingale</h1>
+    <h1 class="text-center">ติดต่อเพื่อใช้ผลิตภัณฑ์จาก nAItingale</h1>
     <!-- {{ errors }} -->
     <FloatLabel class="grow" variant="on">
       <InputText
